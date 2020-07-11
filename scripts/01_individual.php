@@ -12,6 +12,9 @@ for($i = 1; $i < 4; $i++) {
     }
     $accounts = json_decode(file_get_contents($listFile), true);
     foreach($accounts['data'] AS $account) {
+        if($account['name'] === '蔡英文') {
+            print_r($account);
+        }
         if(!isset($account['electionArea'])) {
             $account['electionArea'] = '';
         }
@@ -21,7 +24,7 @@ for($i = 1; $i < 4; $i++) {
         if(!file_exists($indifidualPath)) {
             mkdir($indifidualPath, 0777, true);
         }
-        $indifidualZip = $indifidualPath . '/' . $account['name'] . '.zip';
+        $indifidualZip = $indifidualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '.zip';
         if(!file_exists($indifidualZip)) {
             $part1 = explode('?', $account['downloadZip']);
             $part2 = explode('&', $part1[1]);
