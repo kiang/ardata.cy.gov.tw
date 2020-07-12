@@ -12,9 +12,9 @@ foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年立法委員選�
         if(!empty($line[7]) && false === strpos($line[7], '*')) {
             if(!isset($expenditures[$line[7]])) {
                 $expenditures[$line[7]] = array(
-                    'id' => $line[7],
-                    'name' => $line[6],
                     'money' => 0,
+                    'name' => $line[6],
+                    'id' => $line[7],
                 );
             }
             $expenditures[$line[7]]['money'] += intval($line[9]);
@@ -31,9 +31,9 @@ foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年立法委員選�
         if(!empty($line[7]) && false === strpos($line[7], '*')) {
             if(!isset($incomes[$line[7]])) {
                 $incomes[$line[7]] = array(
-                    'id' => $line[7],
-                    'name' => $line[6],
                     'money' => 0,
+                    'name' => $line[6],
+                    'id' => $line[7],
                 );
             }
             $incomes[$line[7]]['money'] += intval($line[8]);
@@ -51,9 +51,9 @@ foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年總統、副總�
         if(!empty($line[7]) && false === strpos($line[7], '*')) {
             if(!isset($expenditures[$line[7]])) {
                 $expenditures[$line[7]] = array(
-                    'id' => $line[7],
+                    'money' => 0,
                     'name' => $line[6],
-                    'money' => 0
+                    'id' => $line[7],
                 );
             }
             $expenditures[$line[7]]['money'] += intval($line[9]);
@@ -70,9 +70,9 @@ foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年總統、副總�
         if(!empty($line[7]) && false === strpos($line[7], '*')) {
             if(!isset($incomes[$line[7]])) {
                 $incomes[$line[7]] = array(
-                    'id' => $line[7],
-                    'name' => $line[6],
                     'money' => 0,
+                    'name' => $line[6],
+                    'id' => $line[7],
                 );
             }
             $incomes[$line[7]]['money'] += intval($line[8]);
@@ -90,12 +90,55 @@ function cmp($a, $b)
 usort($expenditures, "cmp");
 usort($incomes, "cmp");
 $fh = fopen(dirname(__DIR__) . '/report/2020_incomes_sort.csv', 'w');
-fputcsv($fh, array('id', 'name', 'money'));
+fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status'));
+$gcisPath = dirname(__DIR__) . '/gcis.nat.g0v.tw';
 foreach($incomes AS $line) {
+    if(false !== strpos($line['id'], '政黨')) {
+        continue;
+    }
+    $gcisFile = $gcisPath . '/' . $line['id'] . '.json';
+    if(!file_exists($gcisFile)) {
+        file_put_contents($gcisFile, file_get_contents('http://gcis.nat.g0v.tw/api/show/' . $line['id']));
+    }
+    $json = json_decode(file_get_contents($gcisFile), true);
+    $json = $json['data'];
+    if(isset($json['負責人姓名'])) {
+        $json['代表人姓名'] = $json['負責人姓名'];
+    }
+    if(isset($json['資本額(元)'])) {
+        $json['資本總額(元)'] = $json['資本額(元)'];
+    }
+    if(isset($json['現況'])) {
+        $json['公司狀況'] = $json['現況'];
+    }
+    $line[] = isset($json['代表人姓名']) ? $json['代表人姓名'] : '';
+    $line[] = isset($json['資本總額(元)']) ? $json['資本總額(元)'] : '';
+    $line[] = isset($json['公司狀況']) ? $json['公司狀況'] : '';
     fputcsv($fh, $line);
 }
 $fh = fopen(dirname(__DIR__) . '/report/2020_expenditures_sort.csv', 'w');
-fputcsv($fh, array('id', 'name', 'money'));
+fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status'));
 foreach($expenditures AS $line) {
+    if(false !== strpos($line['id'], '政黨')) {
+        continue;
+    }
+    $gcisFile = $gcisPath . '/' . $line['id'] . '.json';
+    if(!file_exists($gcisFile)) {
+        file_put_contents($gcisFile, file_get_contents('http://gcis.nat.g0v.tw/api/show/' . $line['id']));
+    }
+    $json = json_decode(file_get_contents($gcisFile), true);
+    $json = $json['data'];
+    if(isset($json['負責人姓名'])) {
+        $json['代表人姓名'] = $json['負責人姓名'];
+    }
+    if(isset($json['資本額(元)'])) {
+        $json['資本總額(元)'] = $json['資本額(元)'];
+    }
+    if(isset($json['現況'])) {
+        $json['公司狀況'] = $json['現況'];
+    }
+    $line[] = isset($json['代表人姓名']) ? $json['代表人姓名'] : '';
+    $line[] = isset($json['資本總額(元)']) ? $json['資本總額(元)'] : '';
+    $line[] = isset($json['公司狀況']) ? $json['公司狀況'] : '';
     fputcsv($fh, $line);
 }
