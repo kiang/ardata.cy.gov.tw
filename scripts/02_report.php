@@ -89,12 +89,12 @@ function cmp($a, $b)
 }
 usort($expenditures, "cmp");
 usort($incomes, "cmp");
-$fh = fopen(dirname(__DIR__) . '/report/incomes_sort.csv', 'w');
+$fh = fopen(dirname(__DIR__) . '/report/2020_incomes_sort.csv', 'w');
 fputcsv($fh, array('id', 'name', 'money'));
 foreach($incomes AS $line) {
     fputcsv($fh, $line);
 }
-$fh = fopen(dirname(__DIR__) . '/report/expenditures_sort.csv', 'w');
+$fh = fopen(dirname(__DIR__) . '/report/2020_expenditures_sort.csv', 'w');
 fputcsv($fh, array('id', 'name', 'money'));
 foreach($expenditures AS $line) {
     fputcsv($fh, $line);
