@@ -1,6 +1,6 @@
 <?php
-$dataPath = dirname(__DIR__) . '/data/indifidual';
-$accountPath = dirname(__DIR__) . '/data/indifidual/account';
+$dataPath = dirname(__DIR__) . '/data/individual';
+$accountPath = dirname(__DIR__) . '/data/individual/account';
 if(!file_exists($accountPath)) {
     mkdir($accountPath, 0777, true);
 }
@@ -12,20 +12,17 @@ for($i = 1; $i < 4; $i++) {
     }
     $accounts = json_decode(file_get_contents($listFile), true);
     foreach($accounts['data'] AS $account) {
-        if($account['name'] === '蔡英文') {
-            print_r($account);
-        }
         if(!isset($account['electionArea'])) {
             $account['electionArea'] = '';
         }
-        $indifidualPath = $accountPath . '/' . implode('/', array(
+        $individualPath = $accountPath . '/' . implode('/', array(
             $account['electionName'], $account['electionArea']
         ));
-        if(!file_exists($indifidualPath)) {
-            mkdir($indifidualPath, 0777, true);
+        if(!file_exists($individualPath)) {
+            mkdir($individualPath, 0777, true);
         }
-        $indifidualZip = $indifidualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '.zip';
-        if(!file_exists($indifidualZip)) {
+        $individualZip = $individualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '.zip';
+        if(!file_exists($individualZip)) {
             $part1 = explode('?', $account['downloadZip']);
             $part2 = explode('&', $part1[1]);
             foreach($part2 AS $k => $v) {
@@ -34,8 +31,8 @@ for($i = 1; $i < 4; $i++) {
                 $part2[$k] = implode('=', $part3);
             }
             $url = 'https://ardata.cy.gov.tw' . $part1[0] . '?' . implode('&', $part2);
-            $indifidualZipPath = str_replace(array('(', ')', ' '), array('\\(', '\\)', '\\ '), $indifidualZip);
-            exec("curl '{$url}' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Connection: keep-alive' -H 'Referer: https://ardata.cy.gov.tw/data/search/individual' -H 'Upgrade-Insecure-Requests: 1' -H 'Save-Data: on' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' > {$indifidualZipPath}");
+            $individualZipPath = str_replace(array('(', ')', ' '), array('\\(', '\\)', '\\ '), $individualZip);
+            exec("curl '{$url}' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Connection: keep-alive' -H 'Referer: https://ardata.cy.gov.tw/data/search/individual' -H 'Upgrade-Insecure-Requests: 1' -H 'Save-Data: on' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' > {$individualZipPath}");
         }
     }
 }

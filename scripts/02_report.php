@@ -1,7 +1,7 @@
 <?php
 $zip = new ZipArchive;
 $expenditures = $incomes = array();
-foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年立法委員選舉/*/*.zip') AS $zipFile) {
+foreach(glob(dirname(__DIR__) . '/data/individual/account/109年立法委員選舉/*/*.zip') AS $zipFile) {
     $fh = fopen("zip://{$zipFile}#expenditures.csv", 'r');
     fgetcsv($fh, 2048);
     while($line = fgetcsv($fh, 2048)) {
@@ -40,7 +40,7 @@ foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年立法委員選�
         }
     }
 }
-foreach(glob(dirname(__DIR__) . '/data/indifidual/account/109年總統、副總統選舉/*.zip') AS $zipFile) {
+foreach(glob(dirname(__DIR__) . '/data/individual/account/109年總統、副總統選舉/*.zip') AS $zipFile) {
     $fh = fopen("zip://{$zipFile}#expenditures.csv", 'r');
     fgetcsv($fh, 2048);
     while($line = fgetcsv($fh, 2048)) {
