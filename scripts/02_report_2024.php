@@ -95,7 +95,7 @@ function cmp($a, $b)
 usort($expenditures, "cmp");
 usort($incomes, "cmp");
 $fh = fopen(dirname(__DIR__) . '/report/2024_incomes_sort.csv', 'w');
-fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status'));
+fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status', 'date_of_establishment'));
 $gcisPath = dirname(__DIR__) . '/gcis.nat.g0v.tw';
 foreach ($incomes as $line) {
     if (false !== strpos($line['id'], '政黨')) {
@@ -119,10 +119,11 @@ foreach ($incomes as $line) {
     $line[] = isset($json['代表人姓名']) ? $json['代表人姓名'] : '';
     $line[] = isset($json['資本總額(元)']) ? $json['資本總額(元)'] : '';
     $line[] = isset($json['公司狀況']) ? $json['公司狀況'] : '';
+    $line[] = isset($json['核准設立日期']) ? implode('-', $json['核准設立日期']) : '';
     fputcsv($fh, $line);
 }
 $fh = fopen(dirname(__DIR__) . '/report/2024_expenditures_sort.csv', 'w');
-fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status'));
+fputcsv($fh, array('money', 'name', 'id', 'owner', 'capital', 'status', 'date_of_establishment'));
 foreach ($expenditures as $line) {
     if (false !== strpos($line['id'], '政黨')) {
         continue;
@@ -145,5 +146,6 @@ foreach ($expenditures as $line) {
     $line[] = isset($json['代表人姓名']) ? $json['代表人姓名'] : '';
     $line[] = isset($json['資本總額(元)']) ? $json['資本總額(元)'] : '';
     $line[] = isset($json['公司狀況']) ? $json['公司狀況'] : '';
+    $line[] = isset($json['核准設立日期']) ? implode('-', $json['核准設立日期']) : '';
     fputcsv($fh, $line);
 }
