@@ -17,7 +17,7 @@ foreach (glob(dirname(__DIR__) . '/data/individual/account/109年總統、副總
         }
         $candidate = $line[1];
         $line[8] = intval($line[8]);
-        $line[12] = preg_replace('/[a-z\\:\\*\\-\\(\\)\\.\\/，]+/i', '', $line[12]);
+        $line[12] = preg_replace('/[^\x{4e00}-\x{9fa5}]+/u', '', $line[12]);
         if (empty($line[12])) {
             continue;
         }
@@ -57,7 +57,7 @@ foreach (glob(dirname(__DIR__) . '/data/individual/account/113年總統、副總
         }
         $candidate = $line[1];
         $line[8] = intval($line[8]);
-        $line[15] = preg_replace('/[a-z\\:\\*\\-\\(\\)\\.\\/，]+/i', '', $line[15]);
+        $line[15] = preg_replace('/[^\x{4e00}-\x{9fa5}]+/u', '', $line[15]);
         if (empty($line[15])) {
             continue;
         }
