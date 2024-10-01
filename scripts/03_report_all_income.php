@@ -31,7 +31,7 @@ foreach (glob(dirname(__DIR__) . '/data/mirror-media/*.csv') as $csvFile) {
             if (strlen($data['身份證/統一編']) !== 8) {
                 continue;
             }
-            if($data['屆數'] == 7) {
+            if ($data['屆數'] == 7) {
                 $data['屆數'] = '097年立法委員選舉';
             } else {
                 $data['屆數'] = '101年立法委員選舉';
@@ -64,12 +64,12 @@ foreach (glob(dirname(__DIR__) . '/data/mirror-media/*.csv') as $csvFile) {
             if ($data['收入金額'] < 10000) {
                 continue;
             }
-            if($data['收支科目'] == '營利事業捐贈收入') {
+            if ($data['收支科目'] == '營利事業捐贈收入') {
                 $targetFile = $pathBiz . '/' . $data['統一編號'] . '.csv';
             } else {
                 $targetFile = $pathIdv . '/' . substr($data['統一編號'], 0, 3) . $data['捐贈者／支出對象'] . '.csv';
             }
-            
+
             if (!file_exists($targetFile)) {
                 $oFh = fopen($targetFile, 'w');
                 fputcsv($oFh, ['選舉', '捐贈對象', '捐贈人', '捐贈日期', '捐贈金額']);
@@ -126,32 +126,38 @@ foreach (glob(dirname(__DIR__) . '/data/parties/account/*/*.zip') as $zipFile) {
     }
 }
 
-foreach (glob(dirname(__DIR__) . '/data/individual/account/*/*_1.zip') as $zipFile) {
-    $fh = fopen("zip://{$zipFile}#incomes.csv", 'r');
-    fgetcsv($fh, 2048);
-    while ($line = fgetcsv($fh, 2048)) {
-        if (!isset($line[7])) {
-            continue;
-        }
-        $line[7] = trim($line[7]);
-        if ($line[8] < 10000) {
-            continue;
-        }
-        if ($line[5] === '個人捐贈收入') {
-            $targetFile = $pathIdv . '/' . substr($line[7], 0, 3) . $line[6] . '.csv';
-        } else {
-            if (strlen($line[7]) !== 8) {
+$paths = [
+    dirname(__DIR__) . '/data/individual/account/*/*_1.zip',
+    dirname(__DIR__) . '/data/individual/account/*/*/*_1.zip'
+];
+foreach ($paths as $path) {
+    foreach (glob($path) as $zipFile) {
+        $fh = fopen("zip://{$zipFile}#incomes.csv", 'r');
+        fgetcsv($fh, 2048);
+        while ($line = fgetcsv($fh, 2048)) {
+            if (!isset($line[7])) {
                 continue;
             }
-            $targetFile = $pathBiz . '/' . $line[7] . '.csv';
-        }
-        if (!file_exists($targetFile)) {
-            $oFh = fopen($targetFile, 'w');
-            fputcsv($oFh, ['選舉', '捐贈對象', '捐贈人', '捐贈日期', '捐贈金額']);
+            $line[7] = trim($line[7]);
+            if ($line[8] < 10000) {
+                continue;
+            }
+            if ($line[5] === '個人捐贈收入') {
+                $targetFile = $pathIdv . '/' . substr($line[7], 0, 3) . $line[6] . '.csv';
+            } else {
+                if (strlen($line[7]) !== 8) {
+                    continue;
+                }
+                $targetFile = $pathBiz . '/' . $line[7] . '.csv';
+            }
+            if (!file_exists($targetFile)) {
+                $oFh = fopen($targetFile, 'w');
+                fputcsv($oFh, ['選舉', '捐贈對象', '捐贈人', '捐贈日期', '捐贈金額']);
+                fclose($oFh);
+            }
+            $oFh = fopen($targetFile, 'a');
+            fputcsv($oFh, [$line[2], $line[1], $line[6], $line[4], $line[8]]);
             fclose($oFh);
         }
-        $oFh = fopen($targetFile, 'a');
-        fputcsv($oFh, [$line[2], $line[1], $line[6], $line[4], $line[8]]);
-        fclose($oFh);
     }
 }
