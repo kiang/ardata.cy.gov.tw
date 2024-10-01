@@ -43,11 +43,11 @@ foreach (glob(dirname(__DIR__) . '/data/parties/account/*/*.zip') as $zipFile) {
         }
         if (!file_exists($targetFile)) {
             $oFh = fopen($targetFile, 'w');
-            fputcsv($oFh, ['選舉', '捐贈對象', '捐贈日期', '捐贈金額']);
+            fputcsv($oFh, ['選舉', '捐贈對象', '捐贈人', '捐贈日期', '捐贈金額']);
             fclose($oFh);
         }
         $oFh = fopen($targetFile, 'a');
-        fputcsv($oFh, [$line[3] . '政黨', $line[1], $line[4], $line[8]]);
+        fputcsv($oFh, [$line[3] . '政黨', $line[1], $line[6], $line[4], $line[8]]);
         fclose($oFh);
     }
 }
@@ -73,11 +73,11 @@ foreach (glob(dirname(__DIR__) . '/data/individual/account/*/*_1.zip') as $zipFi
         }
         if (!file_exists($targetFile)) {
             $oFh = fopen($targetFile, 'w');
-            fputcsv($oFh, ['選舉', '捐贈對象', '捐贈日期', '捐贈金額']);
+            fputcsv($oFh, ['選舉', '捐贈對象', '捐贈人', '捐贈日期', '捐贈金額']);
             fclose($oFh);
         }
         $oFh = fopen($targetFile, 'a');
-        fputcsv($oFh, [$line[2], $line[1], $line[4], $line[8]]);
+        fputcsv($oFh, [$line[2], $line[1], $line[6], $line[4], $line[8]]);
         fclose($oFh);
     }
 }
