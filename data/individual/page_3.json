@@ -1,26 +1,6 @@
 {
     "data": [
         {
-            "accountNumber": "1111801091",
-            "accountType": "Individual",
-            "yearOrSerial": 1,
-            "version": 1,
-            "electionYear": "111",
-            "electionName": "111年直轄市議員選舉",
-            "electionName2": "111年直轄市議員選舉",
-            "electionArea": "新北市",
-            "name": "張凱鈞",
-            "path": "account-112071710-1111801091-9ed55df75f90464eabbec87a61f7eb10",
-            "type": "Account",
-            "pdfFileName": "person_incomes and expenditures_first.pdf",
-            "csvFileName": "person_incomes and expenditures_first.csv",
-            "zipFileName": "account-112071710-1111801091.zip",
-            "isBackend": false,
-            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=1",
-            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=2",
-            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=3"
-        },
-        {
             "accountNumber": "1111801543",
             "accountType": "Individual",
             "yearOrSerial": 1,
@@ -19999,12 +19979,32 @@
             "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081806510&YearOrSerial=1&Version=2&SearchType=1&DownloadType=1",
             "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081806510&YearOrSerial=1&Version=2&SearchType=1&DownloadType=2",
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081806510&YearOrSerial=1&Version=2&SearchType=1&DownloadType=3"
+        },
+        {
+            "accountNumber": "1081802167",
+            "accountType": "Individual",
+            "yearOrSerial": 1,
+            "version": 2,
+            "electionYear": "109",
+            "electionName": "109年立法委員選舉",
+            "electionName2": "109年立法委員選舉",
+            "electionArea": "基隆市",
+            "name": "蔡適應",
+            "path": "account-109070201-1081802167-20dc7fc6a5f44a83bbb1282f02ad787d",
+            "type": "Account",
+            "pdfFileName": "person_incomes and expenditures_first.pdf",
+            "csvFileName": "person_incomes and expenditures_first.csv",
+            "zipFileName": "account-109070201-1081802167.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081802167&YearOrSerial=1&Version=2&SearchType=1&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081802167&YearOrSerial=1&Version=2&SearchType=1&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=109年立法委員選舉&ElectionArea=基隆市&AccountNumber=1081802167&YearOrSerial=1&Version=2&SearchType=1&DownloadType=3"
         }
     ],
     "paging": {
         "pageNumber": 3,
         "pageSize": 1000,
         "pageCount": 6,
-        "recordCount": 5681
+        "recordCount": 5680
     }
 }

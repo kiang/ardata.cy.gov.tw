@@ -1,26 +1,6 @@
 {
     "data": [
         {
-            "accountNumber": "1111803744",
-            "accountType": "Individual",
-            "yearOrSerial": 1,
-            "version": 1,
-            "electionYear": "111",
-            "electionName": "111年鄉(鎮、市)長選舉",
-            "electionName2": "111年鄉(鎮、市)長選舉",
-            "electionArea": "雲林縣",
-            "name": "吳國昌",
-            "path": "account-112060503-1111803744-c7fe62dba5fa4a70944e8586d9dc32e3",
-            "type": "Account",
-            "pdfFileName": "person_incomes and expenditures_first.pdf",
-            "csvFileName": "person_incomes and expenditures_first.csv",
-            "zipFileName": "account-112060503-1111803744.zip",
-            "isBackend": false,
-            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年鄉(鎮、市)長選舉&ElectionArea=雲林縣&AccountNumber=1111803744&YearOrSerial=1&Version=1&SearchType=1&DownloadType=1",
-            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年鄉(鎮、市)長選舉&ElectionArea=雲林縣&AccountNumber=1111803744&YearOrSerial=1&Version=1&SearchType=1&DownloadType=2",
-            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年鄉(鎮、市)長選舉&ElectionArea=雲林縣&AccountNumber=1111803744&YearOrSerial=1&Version=1&SearchType=1&DownloadType=3"
-        },
-        {
             "accountNumber": "1111805630",
             "accountType": "Individual",
             "yearOrSerial": 1,
@@ -19999,12 +19979,32 @@
             "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801172&YearOrSerial=1&Version=4&SearchType=1&DownloadType=1",
             "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801172&YearOrSerial=1&Version=4&SearchType=1&DownloadType=2",
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801172&YearOrSerial=1&Version=4&SearchType=1&DownloadType=3"
+        },
+        {
+            "accountNumber": "1111801091",
+            "accountType": "Individual",
+            "yearOrSerial": 1,
+            "version": 1,
+            "electionYear": "111",
+            "electionName": "111年直轄市議員選舉",
+            "electionName2": "111年直轄市議員選舉",
+            "electionArea": "新北市",
+            "name": "張凱鈞",
+            "path": "account-112071710-1111801091-9ed55df75f90464eabbec87a61f7eb10",
+            "type": "Account",
+            "pdfFileName": "person_incomes and expenditures_first.pdf",
+            "csvFileName": "person_incomes and expenditures_first.csv",
+            "zipFileName": "account-112071710-1111801091.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801091&YearOrSerial=1&Version=1&SearchType=1&DownloadType=3"
         }
     ],
     "paging": {
         "pageNumber": 2,
         "pageSize": 1000,
         "pageCount": 6,
-        "recordCount": 5681
+        "recordCount": 5680
     }
 }
