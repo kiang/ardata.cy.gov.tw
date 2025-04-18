@@ -1072,6 +1072,23 @@
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1001804086&YearOrSerial=111&Version=1&SearchType=3&DownloadType=3"
         },
         {
+            "accountNumber": "0931800845",
+            "accountType": "Party",
+            "yearOrSerial": 111,
+            "version": 3,
+            "name": "民主進步黨",
+            "politicalPartyCode": 16,
+            "path": "political party-112122001-0931800845-148f9cc641bb4cd0a6560fc1eb04472d",
+            "type": "PoliticalParty",
+            "pdfFileName": "political party_incomes and expenditures_balance.pdf",
+            "csvFileName": "political party-112122001-0931800845-incomes and expenditures-balance.zip",
+            "zipFileName": "political party-112122001-0931800845-all.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800845&YearOrSerial=111&Version=3&SearchType=3&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800845&YearOrSerial=111&Version=3&SearchType=3&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800845&YearOrSerial=111&Version=3&SearchType=3&DownloadType=3"
+        },
+        {
             "accountNumber": "1071803439",
             "accountType": "Party",
             "yearOrSerial": 111,
@@ -4816,6 +4833,6 @@
         "pageNumber": 1,
         "pageSize": 1000,
         "pageCount": 1,
-        "recordCount": 283
+        "recordCount": 284
     }
 }

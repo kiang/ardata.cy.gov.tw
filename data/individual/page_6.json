@@ -1,6 +1,26 @@
 {
     "data": [
         {
+            "accountNumber": "1071801775",
+            "accountType": "Individual",
+            "yearOrSerial": 1,
+            "version": 4,
+            "electionYear": "107",
+            "electionName": "107年直轄市議員選舉",
+            "electionName2": "107年直轄市議員選舉",
+            "electionArea": "桃園市",
+            "name": "沈佩玲",
+            "path": "account-108080203-1071801775-59912a225f2148359e0370f95919e10e",
+            "type": "Account",
+            "pdfFileName": "person_incomes and expenditures_first.pdf",
+            "csvFileName": "person_incomes and expenditures_first.csv",
+            "zipFileName": "account-108080203-1071801775.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=107年直轄市議員選舉&ElectionArea=桃園市&AccountNumber=1071801775&YearOrSerial=1&Version=4&SearchType=1&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=107年直轄市議員選舉&ElectionArea=桃園市&AccountNumber=1071801775&YearOrSerial=1&Version=4&SearchType=1&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=107年直轄市議員選舉&ElectionArea=桃園市&AccountNumber=1071801775&YearOrSerial=1&Version=4&SearchType=1&DownloadType=3"
+        },
+        {
             "accountNumber": "1071803248",
             "accountType": "Individual",
             "yearOrSerial": 1,
@@ -13600,6 +13620,6 @@
         "pageNumber": 6,
         "pageSize": 1000,
         "pageCount": 6,
-        "recordCount": 5680
+        "recordCount": 5681
     }
 }
