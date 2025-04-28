@@ -24,7 +24,11 @@ for ($i = 1; $i <= $pageCount; $i++) {
         if (!file_exists($individualPath)) {
             mkdir($individualPath, 0777, true);
         }
-        $individualZip = $individualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '.zip';
+        if ($account['version'] > 1) {
+            $individualZip = $individualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '_v' . $account['version'] . '.zip';
+        } else {
+            $individualZip = $individualPath . '/' . $account['name'] . '_' . $account['yearOrSerial'] . '.zip';
+        }
         if (!file_exists($individualZip)) {
             $part1 = explode('?', $account['downloadZip']);
             $part2 = explode('&', $part1[1]);

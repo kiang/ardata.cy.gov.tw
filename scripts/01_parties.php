@@ -18,7 +18,12 @@ for ($i = 1; $i <= $pageCount; $i++) {
         if (!file_exists($partiesPath)) {
             mkdir($partiesPath, 0777, true);
         }
-        $partiesZip = $partiesPath . '/' . $account['yearOrSerial'] . '.zip';
+        if($account['version'] > 1) {
+            $partiesZip = $partiesPath . '/' . $account['yearOrSerial'] . '_v' . $account['version'] . '.zip';
+        } else {
+            $partiesZip = $partiesPath . '/' . $account['yearOrSerial'] . '.zip';
+        }
+        
         if (!file_exists($partiesZip)) {
             $part1 = explode('?', $account['downloadZip']);
             $part2 = explode('&', $part1[1]);
