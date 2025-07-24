@@ -749,23 +749,6 @@
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1091800451&YearOrSerial=111&Version=4&SearchType=3&DownloadType=3"
         },
         {
-            "accountNumber": "0931800696",
-            "accountType": "Party",
-            "yearOrSerial": 111,
-            "version": 2,
-            "name": "中國國民黨",
-            "politicalPartyCode": 1,
-            "path": "political party-112091206-0931800696-ba85a242bc23473c8c9e0d83c152bfec",
-            "type": "PoliticalParty",
-            "pdfFileName": "political party_incomes and expenditures_balance.pdf",
-            "csvFileName": "political party-112091206-0931800696-incomes and expenditures-balance.zip",
-            "zipFileName": "political party-112091206-0931800696-all.zip",
-            "isBackend": false,
-            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800696&YearOrSerial=111&Version=2&SearchType=3&DownloadType=1",
-            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800696&YearOrSerial=111&Version=2&SearchType=3&DownloadType=2",
-            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=0931800696&YearOrSerial=111&Version=2&SearchType=3&DownloadType=3"
-        },
-        {
             "accountNumber": "1091801547",
             "accountType": "Party",
             "yearOrSerial": 111,
@@ -4833,6 +4816,6 @@
         "pageNumber": 1,
         "pageSize": 1000,
         "pageCount": 1,
-        "recordCount": 284
+        "recordCount": 283
     }
 }
