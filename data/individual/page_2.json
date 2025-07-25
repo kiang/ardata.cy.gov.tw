@@ -17241,6 +17241,26 @@
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=臺北市&AccountNumber=1111803027&YearOrSerial=1&Version=2&SearchType=1&DownloadType=3"
         },
         {
+            "accountNumber": "1111801127",
+            "accountType": "Individual",
+            "yearOrSerial": 1,
+            "version": 5,
+            "electionYear": "111",
+            "electionName": "111年直轄市議員選舉",
+            "electionName2": "111年直轄市議員選舉",
+            "electionArea": "臺北市",
+            "name": "李建昌",
+            "path": "account-112071710-1111801127-65e7002a530543888380fc1eb2c85d9c",
+            "type": "Account",
+            "pdfFileName": "person_incomes and expenditures_first.pdf",
+            "csvFileName": "person_incomes and expenditures_first.csv",
+            "zipFileName": "account-112071710-1111801127.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=臺北市&AccountNumber=1111801127&YearOrSerial=1&Version=5&SearchType=1&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=臺北市&AccountNumber=1111801127&YearOrSerial=1&Version=5&SearchType=1&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=臺北市&AccountNumber=1111801127&YearOrSerial=1&Version=5&SearchType=1&DownloadType=3"
+        },
+        {
             "accountNumber": "1111801776",
             "accountType": "Individual",
             "yearOrSerial": 1,
@@ -19979,32 +19999,12 @@
             "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111802994&YearOrSerial=1&Version=2&SearchType=1&DownloadType=1",
             "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111802994&YearOrSerial=1&Version=2&SearchType=1&DownloadType=2",
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111802994&YearOrSerial=1&Version=2&SearchType=1&DownloadType=3"
-        },
-        {
-            "accountNumber": "1111801078",
-            "accountType": "Individual",
-            "yearOrSerial": 1,
-            "version": 3,
-            "electionYear": "111",
-            "electionName": "111年直轄市議員選舉",
-            "electionName2": "111年直轄市議員選舉",
-            "electionArea": "新北市",
-            "name": "張志豪",
-            "path": "account-112071710-1111801078-e0c7c3e5ea3d4353b6d57858fa01d80b",
-            "type": "Account",
-            "pdfFileName": "person_incomes and expenditures_first.pdf",
-            "csvFileName": "person_incomes and expenditures_first.csv",
-            "zipFileName": "account-112071710-1111801078.zip",
-            "isBackend": false,
-            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801078&YearOrSerial=1&Version=3&SearchType=1&DownloadType=1",
-            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801078&YearOrSerial=1&Version=3&SearchType=1&DownloadType=2",
-            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=111年直轄市議員選舉&ElectionArea=新北市&AccountNumber=1111801078&YearOrSerial=1&Version=3&SearchType=1&DownloadType=3"
         }
     ],
     "paging": {
         "pageNumber": 2,
         "pageSize": 1000,
         "pageCount": 6,
-        "recordCount": 5682
+        "recordCount": 5685
     }
 }
