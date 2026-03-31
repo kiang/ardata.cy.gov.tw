@@ -5,22 +5,26 @@ foreach (glob(dirname(__DIR__) . '/report/incomes/business/*.csv') as $csvFile) 
     $fh = fopen($csvFile, 'r');
     $head = fgetcsv($fh, 2048);
     $amount = 0;
+    $title = '';
     while ($line = fgetcsv($fh, 2048)) {
         $data = array_combine($head, $line);
         $amount += $data['捐贈金額'];
+        if ($title === '' && isset($data['捐贈人'])) {
+            $title = $data['捐贈人'];
+        }
     }
     $amount = intval($amount);
     if (!isset($pool[$amount])) {
         $pool[$amount] = [];
     }
-    $pool[$amount][] = $p['filename'];
+    $pool[$amount][] = [$p['filename'], $title];
 }
 
 krsort($pool);
 $oFh = fopen(dirname(__DIR__) . '/report/incomes/business.csv', 'w');
 foreach ($pool as $k => $lines) {
     foreach ($lines as $line) {
-        fputcsv($oFh, [$k, $line]);
+        fputcsv($oFh, [$k, $line[0], $line[1]]);
     }
 }
 
