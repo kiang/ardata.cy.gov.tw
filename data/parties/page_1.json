@@ -1599,6 +1599,23 @@
             "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1111803803&YearOrSerial=111&Version=3&SearchType=3&DownloadType=3"
         },
         {
+            "accountNumber": "1071807482",
+            "accountType": "Party",
+            "yearOrSerial": 111,
+            "version": 6,
+            "name": "台灣基進",
+            "politicalPartyCode": 303,
+            "path": "political party-112091206-1071807482-ef8cdab78431429ca68a75ccaba749ee",
+            "type": "PoliticalParty",
+            "pdfFileName": "political party_incomes and expenditures_balance.pdf",
+            "csvFileName": "political party-112091206-1071807482-incomes and expenditures-balance.zip",
+            "zipFileName": "political party-112091206-1071807482-all.zip",
+            "isBackend": false,
+            "downloadPdf": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1071807482&YearOrSerial=111&Version=6&SearchType=3&DownloadType=1",
+            "downloadCsv": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1071807482&YearOrSerial=111&Version=6&SearchType=3&DownloadType=2",
+            "downloadZip": "\/api\/v1\/Search\/download?ElectionName=&ElectionArea=&AccountNumber=1071807482&YearOrSerial=111&Version=6&SearchType=3&DownloadType=3"
+        },
+        {
             "accountNumber": "1111803421",
             "accountType": "Party",
             "yearOrSerial": 111,
@@ -5513,6 +5530,6 @@
         "pageNumber": 1,
         "pageSize": 1000,
         "pageCount": 1,
-        "recordCount": 324
+        "recordCount": 325
     }
 }
